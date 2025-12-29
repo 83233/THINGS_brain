@@ -1,0 +1,27 @@
+Test Loss: 0.9105 | Test Avg Error: 1.2994|Test Avg Confidence: 0.5465
+
+Top-1 recall: 0.6122%
+Top-5 recall: 0.8163%
+Top-10 recall: 1.2245%
+
+config = {
+        "input_shape": (72, 91, 75),
+        "patch_size": (6, 7, 5),
+        "embed_dim": 512,
+        "num_heads": 8,
+        "num_layers": 3,
+        "num_classes": 10,
+        "batch_size": 4,
+        "lr": 1e-4,
+        "epochs": 10,
+        "train_ratio": 0.8,
+        "batches_to_train": 64,
+        "batches_to_test": 32
+    }
+
+=== Top-N Attention Voxels Region Proportions ===       
+Background                    : 67.50%
+Middle Frontal Gyrus          :  0.50%
+Inferior Frontal Gyrus, pars triangularis:  1.00%       
+Inferior Frontal Gyrus, pars opercularis: 24.00%        
+Precentral Gyrus              :  7.00%

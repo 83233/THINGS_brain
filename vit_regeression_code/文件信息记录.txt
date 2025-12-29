@@ -1,0 +1,121 @@
+### **2. 图像层级（01_image-level）**
+| 文件/文件夹名称                          | 说明                                                                 |
+|------------------------------------------|----------------------------------------------------------------------|
+| `image-level_description.txt`            | 文件夹内容及变量的详细说明文档。                                     |
+| `_images-metadata_things.tsv`            | **单图像元数据**：每张图像的可识别性（recognizability）、可命名性（nameability）、记忆性（memorability）等评分。 |
+| `CorNet-similarity-matrices_things`      | **图像相似性矩阵**：基于CorNet模型计算的图像间相似性（用于表征分析）。 |
+| `image_paths.csv/.mat`                   | 图像文件的相对路径列表（CSV/MATLAB格式）。                          |
+
+---
+
+### **3. 对象层级（02_object-level）**
+| 文件/文件夹名称                          | 说明                                                                 |
+|------------------------------------------|----------------------------------------------------------------------|
+| `object-level_description.txt`           | 文件夹内容及变量的详细说明文档。                                     |
+| `_concepts-metadata_things.tsv`          | 同上（跨层级共享的对象概念元数据表）。                               |
+| `_property-ratings.tsv`                  | **对象属性评分**：1,854个对象概念的平均属性评分（如形状、功能等）。   |
+
+
+===== NIfTI 文件信息 =====
+数据维度: (72, 91, 75, 92) 其中前三个维度是体素坐标，第四个维度是不同的激活条件
+
+
+体素尺寸 (mm): (2.0, 2.0, 2.0)
+坐标系: 
+[[  2.           0.           0.         -71.1632843 ]
+ [  0.           2.           0.         -80.94287109]
+ [  0.           0.           2.         -68.46676636]
+ [  0.           0.           0.           1.        ]]
+
+TSV 文件共有 92 行数据--对应不同的stimulus条件
+
+===== TSV 文件信息 =====
+列名: ['Unnamed: 0', 'image_filename']
+
+前5行数据:
+   Unnamed: 0                 image_filename
+0           0                dog/dog_12s.jpg
+1           1            mango/mango_12s.jpg
+2           2                   catch008.jpg
+3           3        spatula/spatula_12s.jpg
+4           4  candelabra/candelabra_14s.jpg
+
+试次 0:
+- 条件名称: N/A
+- Beta图维度: (72, 91, 75)
+- Beta图均值: 0.00
+
+
+
+修改后得到的metadata数据结构如下(目前已经做了归一化处理，并读取了所有12列数据，这里只展示了部分数据)：
+
+trial_number                 image_filename       session      run   base_filename                             filepath    uniqueID  image-label_nameability_mean  image-label_consistency_mean  property_manmade_mean
+0             0                dog/dog_12s.jpg  ses-things01    1         dog_12s                images/dog/dog_12s.jpg         dog                      0.877665                      0.887468                 1.2778
+1             1            mango/mango_12s.jpg  ses-things01    1       mango_12s            images/mango/mango_12s.jpg       mango                      0.636940                      0.655516                 1.0571
+2             3        spatula/spatula_12s.jpg  ses-things01    1     spatula_12s        images/spatula/spatula_12s.jpg     spatula                      0.860361                      0.860361                 6.8611
+3             4  candelabra/candelabra_14s.jpg  ses-things01    1  candelabra_14s  images/candelabra/candelabra_14s.jpg  candelabra                      0.454405                      0.472981                 6.8250
+4             5            panda/panda_12s.jpg  ses-things01    1       panda_12s            images/panda/panda_12s.jpg       panda                      0.969569                      0.969569                 1.1282
+
+'chess_piece/chess_piece_12s.jpg'
+
+
+
+对比学习数据集搭建信息如下：
+   uniqueID                          filepath  ...  property_be-moved_SD  property_pleasant_SD
+0  aardvark  images\aardvark\aardvark_01b.jpg  ...                1.3775                1.0277
+1  aardvark  images\aardvark\aardvark_02s.jpg  ...                1.3775                1.0277
+2  aardvark  images\aardvark\aardvark_03s.jpg  ...                1.3775                1.0277
+3  aardvark  images\aardvark\aardvark_04s.jpg  ...                1.3775                1.0277
+4  aardvark  images\aardvark\aardvark_05s.jpg  ...                1.3775                1.0277
+
+
+可以只给出修改的部分，不变的部分不展示，修改的部分给出修改前的代码，前面用-。修改后的代码前面加上+。方便确认修改位置
+
+
+
+
+
+修改意见如下：
+
+2. 更多优化修改建议
+2.1 混合卷积—Transformer 架构
+Early Convolutions：在最前面加少量小卷积层，有助于引入局部平滑偏置，提升收敛稳定性及精度
+维基百科
+。
+
+CNN+ViT 混合：可参考 UNETR、Swin UNETR 等，将 3D CNN 提取的多尺度特征与 Transformer attention 融合，增强细节和上下文建模能力
+arXiv
+。
+
+2.2 稀疏与低秩注意力
+Linear Attention (Linformer/Performer)：用低秩或高效核方法近似全注意力，将空间复杂度从 O(N²) 降到 O(N) 或 O(N log N)，非常适合大体素数 fMRI 序列
+arXiv
+CVF开放获取
+。
+
+局部 + 全局注意力 (HiLo/Swin)：将注意力头分组，一部分做局部窗口注意力、一部分做全局降采样注意力，兼顾局部细节与长程信息
+arXiv
+。
+
+2.3 位置编码与归一化
+3D 相对位置编码：引入深度、宽度、高度的相对位置编码（RoPE/2D→3D），助力模型更精确地捕捉空间结构
+arXiv
+。
+
+GroupNorm / LayerNorm：对小批量的 3D 数据，GroupNorm 在批量大小不稳定（如 batch_size=1）时比 BatchNorm 更稳健
+arXiv
+。
+
+2.4 专用 fMRI 数据技术
+ROI 预选：先用脑图谱（如 AAL、Harvard-Oxford）抽取感兴趣区，减少体素维度，降低计算量并提升信噪比。
+
+体素级数据增强：在训练时加入 3D 随机旋转、平移、弹性形变等，可提升模型的鲁棒性和泛化能力。
+
+2.5 训练与推理优化
+混合精度：使用 torch.cuda.amp 自动混合精度能缩短训练时间并节省显存。
+
+梯度累积：当单卡显存受限时，用梯度累积模拟更大 batch，有助于训练稳定。
+
+FlashAttention / xFormers：部署时可使用 FlashAttention 或 Facebook xFormers 优化库获得更快的自注意力实现
+Medium
+。

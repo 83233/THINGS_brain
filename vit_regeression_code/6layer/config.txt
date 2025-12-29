@@ -1,0 +1,100 @@
+top-1:0.41%
+top-5:0.51%
+top-10:1.12%
+
+config = {
+        "input_shape": (72, 91, 75),
+        "patch_size": (12, 13, 15),
+        "embed_dim": 512,
+        "num_heads": 8,
+        "num_layers": 6,
+        "num_classes": 12,
+        "batch_size": 16,
+        "lr": 1e-4,
+        "epochs": 10,
+        "train_ratio": 0.8,
+        "batches_to_train": 64,
+        "batches_to_test": 16
+    }
+
+class ViT3D(nn.Module):
+    def __init__(self, 
+                 input_shape=(72, 91, 75),
+                 patch_size=(12, 13, 15),
+                 embed_dim=512,
+                 num_heads=8,
+                 num_layers=6,
+                 num_classes=12):
+        super().__init__()
+        
+        # 验证输入尺寸能被patch尺寸整除
+        assert all([i % p == 0 for i, p in zip(input_shape, patch_size)]), \
+            "Input dimensions must be divisible by patch size"
+        
+        self.input_shape = input_shape
+        self.patch_size = patch_size
+        
+        # 计算patch数量和各维度分割数
+        self.grid_size = tuple([i // p for i, p in zip(input_shape, patch_size)])
+        self.num_patches = np.prod(self.grid_size)
+        # patch_volume = np.prod(patch_size)
+        
+        # 网络结构
+        self.patch_embed = nn.Conv3d(
+                                    in_channels=1,
+                                    out_channels=embed_dim,
+                                    kernel_size=self.patch_size,
+                                    stride=self.patch_size
+                                )  # :contentReference[oaicite:0]{index=0}
+        self.cls_token = nn.Parameter(torch.randn(1, 1, embed_dim))
+        self.pos_embed = nn.Parameter(torch.randn(1, self.num_patches + 1, embed_dim))
+        
+        # Transformer编码器
+        encoder_layer = nn.TransformerEncoderLayer(
+            d_model=embed_dim,
+            nhead=num_heads,
+            dim_feedforward=4*embed_dim,
+            dropout=0.1,
+            batch_first=True
+        )
+        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=num_layers,enable_nested_tensor=True)
+        
+        # 回归头
+        self.head = nn.Sequential(
+            nn.LayerNorm(embed_dim),
+            nn.Linear(embed_dim, num_classes)
+        )
+
+    def forward(self, x, return_attn = False):
+        batch_size = x.shape[0]
+        
+        # x: [B, 1, D, H, W]
+        x = self.patch_embed(x)             # [B, E, D', H', W']
+        # 展平并转置到 [B, N_patches, embed_dim]
+        x = x.flatten(2).transpose(1, 2)    # :contentReference[oaicite:1]{index=1}
+        
+        # 添加 cls token & 位置编码
+        cls_tokens = self.cls_token.expand(batch_size, -1, -1)
+        x = torch.cat((cls_tokens, x), dim=1)
+        x = x + self.pos_embed
+        
+        attn_weights = []
+        for layer in self.transformer.layers:
+            # 利用原生 TransformerEncoderLayer，需手动提取 attn
+            # 这里我们 monkey-patch multihead_attention to return weights
+            src2, attn = layer.self_attn(x, x, x, need_weights=True)
+            attn_weights.append(attn)  # attn: [B, heads, N, N]
+            x = layer.norm1(x + layer.dropout1(src2))
+            x = layer.norm2(x + layer.dropout2(layer.linear2(layer.dropout(layer.activation(layer.linear1(x))))))
+        
+        # Transformer处理
+        x = self.transformer(x)
+        
+        # 取cls token进行回归
+        x = x[:, 0, :]
+
+        x = self.head(x)
+
+        if return_attn:
+            return x, attn_weights
+        return x

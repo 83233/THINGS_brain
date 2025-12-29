@@ -1,0 +1,199 @@
+[Epoch 1] Avg Loss=9.4987, Learning Rate=1.00e-04
+[Epoch 2] Avg Loss=4.4323, Learning Rate=1.00e-04
+[Epoch 3] Avg Loss=2.8173, Learning Rate=1.00e-04
+[Epoch 4] Avg Loss=2.0045, Learning Rate=1.00e-04
+[Epoch 5] Avg Loss=1.5641, Learning Rate=1.00e-04
+[Epoch 6] Avg Loss=1.3005, Learning Rate=1.00e-04
+[Epoch 7] Avg Loss=1.1363, Learning Rate=1.00e-04
+[Epoch 8] Avg Loss=1.0095, Learning Rate=1.00e-04
+[Epoch 9] Avg Loss=0.9028, Learning Rate=1.00e-04
+[Epoch 10] Avg Loss=0.8500, Learning Rate=1.00e-04
+[Epoch 11] Avg Loss=0.7833, Learning Rate=1.00e-04
+[Epoch 12] Avg Loss=0.7344, Learning Rate=1.00e-04
+[Epoch 13] Avg Loss=0.6915, Learning Rate=1.00e-04
+[Epoch 14] Avg Loss=0.6667, Learning Rate=1.00e-04
+[Epoch 15] Avg Loss=0.6336, Learning Rate=1.00e-04
+[Epoch 16] Avg Loss=0.6001, Learning Rate=1.00e-04
+[Epoch 17] Avg Loss=0.5721, Learning Rate=1.00e-04
+[Epoch 18] Avg Loss=0.5439, Learning Rate=1.00e-04
+[Epoch 19] Avg Loss=0.5065, Learning Rate=1.00e-04
+[Epoch 20] Avg Loss=0.4896, Learning Rate=1.00e-04
+[Epoch 21] Avg Loss=0.4684, Learning Rate=1.00e-04
+[Epoch 22] Avg Loss=0.4526, Learning Rate=1.00e-04
+[Epoch 23] Avg Loss=0.4354, Learning Rate=1.00e-04
+[Epoch 24] Avg Loss=0.4254, Learning Rate=1.00e-04
+[Epoch 25] Avg Loss=0.4068, Learning Rate=1.00e-04
+[Epoch 26] Avg Loss=0.4047, Learning Rate=1.00e-04
+[Epoch 27] Avg Loss=0.4013, Learning Rate=1.00e-04
+[Epoch 28] Avg Loss=0.3796, Learning Rate=1.00e-04
+[Epoch 29] Avg Loss=0.3769, Learning Rate=1.00e-04
+[Epoch 30] Avg Loss=0.3735, Learning Rate=1.00e-04
+
+调整之前的，未使用动态调节的prop_loss
+Epoch 1: 100%|███████████████████████████████████████| 200/200 [03:38<00:00,  1.09s/it, contra_loss=2.4112, prop_loss=30.4486]
+Epoch 1: Avg Loss=9.4987
+[Epoch 1] Avg Loss=9.4987, Learning Rate=1.00e-04
+[Epoch 2] Sampled 12800/142039 pairs.
+rop_loss=18.6493]
+Epoch 2: Avg Loss=4.4323
+[Epoch 2] Avg Loss=4.4323, Learning Rate=1.00e-04
+[Epoch 3] Sampled 12800/142039 pairs.
+Epoch 3: 100%|████████████████████████████████████████| 200/200 [03:33<00:00,  1.07s/it, contra_loss=1.7704, prop_loss=8.8996]
+Epoch 3: Avg Loss=2.8173
+[Epoch 3] Avg Loss=2.8173, Learning Rate=1.00e-04
+[Epoch 4] Sampled 12800/142039 pairs.
+Epoch 4:  14%|█████▋                                   | 28/200 [01:11<01:26,  2.00it/s, contra_loss=1.4886, Epoch 4:  14%|███▏                   | 28/200 [01:13<01:26,  2.00it/s, contra_loss=1.3952, prop_loss=7.0386] Epoch 4: 100%|██████████████████████| 200/200 [03:24<00:00,  1.02s/it, contra_loss=1.1464, prop_loss=4.5284] 
+Epoch 4: Avg Loss=2.0045
+[Epoch 4] Avg Loss=2.0045, Learning Rate=1.00e-04
+[Epoch 5] Sampled 12800/142039 pairs.
+Epoch 5: 100%|██████████████████████| 200/200 [03:34<00:00,  1.07s/it, contra_loss=1.1126, prop_loss=2.4095] 
+Epoch 5: Avg Loss=1.5641
+[Epoch 5] Avg Loss=1.5641, Learning Rate=1.00e-04
+[Epoch 6] Sampled 12800/142039 pairs.
+Epoch 6: 100%|██████████████████████| 200/200 [03:47<00:00,  1.14s/it, contra_loss=0.9696, prop_loss=1.7369] 
+Epoch 6: Avg Loss=1.3005
+[Epoch 6] Avg Loss=1.3005, Learning Rate=1.00e-04
+[Epoch 7] Sampled 12800/142039 pairs.
+Epoch 7: 100%|██████████████████████| 200/200 [03:44<00:00,  1.12s/it, contra_loss=0.9406, prop_loss=1.3971] 
+Epoch 7: Avg Loss=1.1363
+[Epoch 7] Avg Loss=1.1363, Learning Rate=1.00e-04
+[Epoch 8] Sampled 12800/142039 pairs.
+Epoch 8: 100%|██████████████████████| 200/200 [03:28<00:00,  1.04s/it, contra_loss=0.6752, prop_loss=1.1575] 
+Epoch 8: Avg Loss=1.0095
+[Epoch 8] Avg Loss=1.0095, Learning Rate=1.00e-04
+[Epoch 9] Sampled 12800/142039 pairs.
+Epoch 9: 100%|██████████████████████| 200/200 [04:08<00:00,  1.24s/it, contra_loss=0.7535, prop_loss=1.6870] 
+Epoch 9: Avg Loss=0.9028
+[Epoch 9] Avg Loss=0.9028, Learning Rate=1.00e-04
+[Epoch 10] Sampled 12800/142039 pairs.
+Epoch 10: 100%|█████████████████████| 200/200 [03:28<00:00,  1.04s/it, contra_loss=0.6886, prop_loss=1.0183] 
+Epoch 10: Avg Loss=0.8500
+[Epoch 10] Avg Loss=0.8500, Learning Rate=1.00e-04
+[Epoch 11] Sampled 12800/142039 pairs.
+Epoch 11: 100%|█████████████████████| 200/200 [08:18<00:00,  2.49s/it, contra_loss=0.7148, prop_loss=0.9956] 
+Epoch 11: Avg Loss=0.7833
+[Epoch 11] Avg Loss=0.7833, Learning Rate=1.00e-04
+[Epoch 12] Sampled 12800/142039 pairs.
+Epoch 12: 100%|█████████████████████| 200/200 [07:38<00:00,  2.29s/it, contra_loss=0.6201, prop_loss=0.5327] 
+Epoch 12: Avg Loss=0.7344
+[Epoch 12] Avg Loss=0.7344, Learning Rate=1.00e-04
+[Epoch 13] Sampled 12800/142039 pairs.
+Epoch 13: 100%|█████████████████████| 200/200 [10:09<00:00,  3.05s/it, contra_loss=0.6853, prop_loss=0.9432] 
+Epoch 13: Avg Loss=0.6915
+[Epoch 13] Avg Loss=0.6915, Learning Rate=1.00e-04
+[Epoch 14] Sampled 12800/142039 pairs.
+Epoch 14: 100%|█████████████████████| 200/200 [10:36<00:00,  3.18s/it, contra_loss=0.5266, prop_loss=0.7926] 
+Epoch 14: Avg Loss=0.6667
+[Epoch 14] Avg Loss=0.6667, Learning Rate=1.00e-04
+[Epoch 15] Sampled 12800/142039 pairs.
+Epoch 15: 100%|█████████████████████| 200/200 [06:10<00:00,  1.85s/it, contra_loss=0.4722, prop_loss=0.6201] 
+Epoch 15: Avg Loss=0.6336
+[Epoch 15] Avg Loss=0.6336, Learning Rate=1.00e-04
+[Epoch 16] Sampled 12800/142039 pairs.
+Epoch 16: 100%|█████████████████████| 200/200 [10:42<00:00,  3.21s/it, contra_loss=0.4178, prop_loss=0.2986] 
+Epoch 16: Avg Loss=0.6001
+[Epoch 16] Avg Loss=0.6001, Learning Rate=1.00e-04
+[Epoch 17] Sampled 12800/142039 pairs.
+Epoch 17: 100%|█████████████████████| 200/200 [09:20<00:00,  2.80s/it, contra_loss=0.3930, prop_loss=0.2311] 
+Epoch 17: Avg Loss=0.5721
+[Epoch 17] Avg Loss=0.5721, Learning Rate=1.00e-04
+Epoch 18: 100%|█████████| 200/200 [03:11<00:00,  1.04it/s, contra_loss=0.3582, prop_loss=0.3457]
+Epoch 18: Avg Loss=0.5439
+[Epoch 18] Avg Loss=0.5439, Learning Rate=1.00e-04
+[Epoch 19] Sampled 12800/142039 pairs.
+Epoch 19: 100%|█████████| 200/200 [03:09<00:00,  1.06it/s, contra_loss=0.4398, prop_loss=0.1557] 
+Epoch 19: Avg Loss=0.5065
+[Epoch 19] Avg Loss=0.5065, Learning Rate=1.00e-04
+[Epoch 20] Sampled 12800/142039 pairs.
+Epoch 20: 100%|█████████| 200/200 [03:22<00:00,  1.01s/it, contra_loss=0.4289, prop_loss=0.3813] 
+Epoch 20: Avg Loss=0.4896
+[Epoch 20] Avg Loss=0.4896, Learning Rate=1.00e-04
+Epoch 21: 100%|█████████| 200/200 [03:10<00:00,  1.05it/s, contra_loss=0.4579, prop_loss=0.2310]
+Epoch 21: Avg Loss=0.4684
+[Epoch 21] Avg Loss=0.4684, Learning Rate=1.00e-04
+[Epoch 22] Sampled 12800/142039 pairs.
+Epoch 22: 100%|█████████| 200/200 [03:19<00:00,  1.00it/s, contra_loss=0.3516, prop_loss=0.1604] 
+Epoch 22: Avg Loss=0.4526
+[Epoch 22] Avg Loss=0.4526, Learning Rate=1.00e-04
+[Epoch 23] Sampled 12800/142039 pairs.
+Epoch 23: 100%|█████████| 200/200 [03:12<00:00,  1.04it/s, contra_loss=0.3220, prop_loss=0.1426] 
+Epoch 23: Avg Loss=0.4354
+[Epoch 23] Avg Loss=0.4354, Learning Rate=1.00e-04
+[Epoch 24] Sampled 12800/142039 pairs.
+Epoch 24: 100%|█████████| 200/200 [03:25<00:00,  1.03s/it, contra_loss=0.2883, prop_loss=0.3168] 
+Epoch 24: Avg Loss=0.4254
+[Epoch 24] Avg Loss=0.4254, Learning Rate=1.00e-04
+[Epoch 25] Sampled 12800/142039 pairs.
+Epoch 25: 100%|█████████| 200/200 [03:17<00:00,  1.01it/s, contra_loss=0.6012, prop_loss=0.0912] 
+Epoch 25: Avg Loss=0.4068
+[Epoch 25] Avg Loss=0.4068, Learning Rate=1.00e-04
+[Epoch 26] Sampled 12800/142039 pairs.
+Epoch 26: 100%|█████████| 200/200 [03:13<00:00,  1.03it/s, contra_loss=0.3191, prop_loss=0.0978] 
+Epoch 26: Avg Loss=0.4047
+[Epoch 26] Avg Loss=0.4047, Learning Rate=1.00e-04
+[Epoch 27] Sampled 12800/142039 pairs.
+Epoch 27: 100%|█████████| 200/200 [03:09<00:00,  1.05it/s, contra_loss=0.4619, prop_loss=0.0734] 
+Epoch 27: Avg Loss=0.4013
+[Epoch 27] Avg Loss=0.4013, Learning Rate=1.00e-04
+[Epoch 28] Sampled 12800/142039 pairs.
+Epoch 28: 100%|█████████| 200/200 [03:16<00:00,  1.02it/s, contra_loss=0.3527, prop_loss=0.1461] 
+Epoch 28: Avg Loss=0.3796
+[Epoch 28] Avg Loss=0.3796, Learning Rate=1.00e-04
+[Epoch 29] Sampled 12800/142039 pairs.
+Epoch 29: 100%|█████████| 200/200 [03:30<00:00,  1.05s/it, contra_loss=0.4645, prop_loss=0.1524] 
+Epoch 29: Avg Loss=0.3769
+[Epoch 29] Avg Loss=0.3769, Learning Rate=1.00e-04
+[Epoch 30] Sampled 12800/142039 pairs.
+Epoch 30: 100%|█████████| 200/200 [03:06<00:00,  1.07it/s, contra_loss=0.2722, prop_loss=0.0820] 
+Epoch 30: Avg Loss=0.3735
+[Epoch 30] Avg Loss=0.3735, Learning Rate=1.00e-04
+
+使用动态调节的prop_loss后，batch_size扩展为128效果并不好，对比学习的loss不再占主要地位导致其训练不完全，效果不好。
+Epoch 18: 100%|████████████| 100/100 [03:29<00:00,  2.10s/it, contra_loss=1.0311, prop_loss=0.3285]
+Epoch 18: Avg Loss=1.8470
+[Epoch 18] Avg Loss=1.8470, Learning Rate=1.00e-04
+[Epoch 19] Sampled 12800/142039 pairs.
+Epoch 19: 100%|████████████| 100/100 [03:12<00:00,  1.93s/it, contra_loss=0.9675, prop_loss=0.2999] 
+Epoch 19: Avg Loss=1.9091
+[Epoch 19] Avg Loss=1.9091, Learning Rate=1.00e-04
+[Epoch 20] Sampled 12800/142039 pairs.
+Epoch 20: 100%|████████████| 100/100 [03:17<00:00,  1.97s/it, contra_loss=0.9639, prop_loss=0.1148] 
+Epoch 20: Avg Loss=1.9280
+[Epoch 20] Avg Loss=1.9280, Learning Rate=1.00e-04
+
+不使用动态调节的prop_loss，batch_size扩展为128,在64batch_size的基础进行效果测试，两者差距不大。
+Epoch 18: 100%|█████████| 100/100 [03:19<00:00,  1.99s/it, contra_loss=0.9400, prop_loss=0.5169]
+Epoch 18: Avg Loss=0.8301
+[Epoch 18] Avg Loss=0.8301, Learning Rate=1.00e-04
+[Epoch 19] Sampled 12800/142039 pairs.
+Epoch 19: 100%|█████████| 100/100 [03:13<00:00,  1.94s/it, contra_loss=0.7020, prop_loss=0.2543] 
+Epoch 19: Avg Loss=0.7857
+[Epoch 19] Avg Loss=0.7857, Learning Rate=1.00e-04
+[Epoch 20] Sampled 12800/142039 pairs.
+Epoch 20: 100%|█████████| 100/100 [03:09<00:00,  1.90s/it, contra_loss=0.6942, prop_loss=0.5808] 
+Epoch 20: Avg Loss=0.7687
+[Epoch 20] Avg Loss=0.7687, Learning Rate=1.00e-04
+
+
+属性 'property_manmade_mean' 预测 vs 真实 Pearson r: 0.9164
+属性 'property_precious_mean' 预测 vs 真实 Pearson r: 0.5539
+属性 'property_lives_mean' 预测 vs 真实 Pearson r: 0.9168
+属性 'property_heavy_mean' 预测 vs 真实 Pearson r: 0.8309
+属性 'property_natural_mean' 预测 vs 真实 Pearson r: 0.8981
+属性 'property_moves_mean' 预测 vs 真实 Pearson r: 0.8284
+属性 'property_grasp_mean' 预测 vs 真实 Pearson r: 0.8248
+属性 'property_hold_mean' 预测 vs 真实 Pearson r: 0.8505
+属性 'property_be-moved_mean' 预测 vs 真实 Pearson r: 0.8000
+属性 'property_pleasant_mean' 预测 vs 真实 Pearson r: 0.6314
+
+这是去掉topk链接权重的结果
+属性 'property_manmade_mean' 失连接维度 [38, 122, 83, 71, 17] 后 Pearson r: 0.8823
+属性 'property_precious_mean' 失连接维度 [85, 83, 45, 51, 23] 后 Pearson r: 0.5118
+属性 'property_lives_mean' 失连接维度 [120, 17, 14, 109, 127] 后 Pearson r: 0.9079
+属性 'property_heavy_mean' 失连接维度 [113, 47, 67, 107, 73] 后 Pearson r: 0.7883
+属性 'property_natural_mean' 失连接维度 [113, 122, 23, 62, 75] 后 Pearson r: 0.8729
+属性 'property_moves_mean' 失连接维度 [36, 28, 63, 14, 94] 后 Pearson r: 0.7890
+属性 'property_grasp_mean' 失连接维度 [80, 85, 78, 94, 61] 后 Pearson r: 0.7998
+属性 'property_hold_mean' 失连接维度 [85, 48, 1, 14, 80] 后 Pearson r: 0.8340
+属性 'property_be-moved_mean' 失连接维度 [38, 94, 9, 48, 119] 后 Pearson r: 0.7671
+属性 'property_pleasant_mean' 失连接维度 [23, 7, 67, 78, 101] 后 Pearson r: 0.5499

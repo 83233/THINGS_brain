@@ -1,0 +1,56 @@
+0-7: t-SNE 聚类系数 (Silhouette Score), 7 簇: 0.4493;UMAP 聚类系数 (Silhouette Score), 7 簇: 0.4743
+0-7_27:t-SNE 聚类系数 (Silhouette Score), 8 簇: 0.3672;UMAP 聚类系数 (Silhouette Score), 8 簇: 0.4418
+8-14: t-SNE 聚类系数 (Silhouette Score), 5 簇: 0.4323;UMAP 聚类系数 (Silhouette Score), 5 簇: 0.5045
+8-14_27: t-SNE 聚类系数 (Silhouette Score), 6 簇: 0.4073;UMAP 聚类系数 (Silhouette Score), 6 簇: 0.4346
+15-21: t-SNE 聚类系数 (Silhouette Score), 7 簇: 0.4885;UMAP 聚类系数 (Silhouette Score), 7 簇: 0.5317
+15-21_27: t-SNE 聚类系数 (Silhouette Score), 8 簇: 0.3598;UMAP 聚类系数 (Silhouette Score), 8 簇: 0.3823
+22-26: t-SNE 聚类系数 (Silhouette Score), 4 簇: 0.3661;UMAP 聚类系数 (Silhouette Score), 4 簇: 0.5049
+22-27: t-SNE 聚类系数 (Silhouette Score), 5 簇: 0.3900;UMAP 聚类系数 (Silhouette Score), 5 簇: 0.4312
+
+各类别样本数量：
+  类别 0 (animal): 354 张
+
+  类别 2 (body part): 68 张
+  类别 3 (clothing): 216 张
+  类别 4 (clothing accessory): 30 张
+  类别 5 (container): 208 张
+  类别 6 (dessert): 74 张
+  类别 7 (drink): 36 张
+  类别 8 (electronic device): 144 张
+  类别 9 (food): 476 张
+
+  类别 11 (furniture): 66 张
+  类别 12 (home decor): 78 张
+  
+  类别 14 (kitchen appliance): 8 张
+  类别 15 (kitchen tool): 50 张
+  类别 16 (medical equipment): 42 张
+  类别 17 (musical instrument): 66 张
+  类别 18 (office supply): 50 张
+  类别 19 (part of car): 60 张
+  类别 20 (plant): 56 张
+  类别 21 (sports equipment): 120 张
+  类别 22 (tool): 142 张
+  类别 23 (toy): 56 张
+
+  类别 25 (vehicle): 132 张
+  类别 26 (weapon): 58 张
+  类别 27 (Unknown): 1118 张
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
