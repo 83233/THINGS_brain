@@ -1,0 +1,2 @@
+# THINGS_brain
+使用THINGS数据集完成的Vit回归预测行为分数和体素处理代码，课程作业
